@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+     <!-- add icon link -->
+     <link rel = "icon" type = "image/x-icon" href ="static/logo_tr.png">
+    <title>Breast Cancer Prediction Model for Histopathology Image Patches</title>
+    <meta charset="utf-8" name="viewport"
+    content= "width=device-width, initial-scale=1.0">
+    <!-- <style>
+      div {
+        background-image: url('static/bg.png');
+      }
+      </style> -->
+  </head>
+
+  <body>
+    <div class="container_main">
+      <div class="sub_container" id="holder">
+          <table>
+            <tr><td><IMG SRC="static/logo_tr.png" ALT="tries" WIDTH=185 HEIGHT=129></td>
+            <td><center><h1 class='main_heading'>Breast Cancer Prediction Model for Histopathology Image Patches</h1></center></td>
+          </tr>
+        </table>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <p>Upload histopathology images to predict breast cancer
+        <b>[Note: For predicted value, please check the footer.]</b></p>
+        <table class="t1">
+        <form class="form-horizontal" action="{{ url_for('predict')}}" method="post" enctype=multipart/form-data>
+          <div class="form-group">
+            <div class="col-sm-10">
+                <thead>
+                  <tr><th colspan="2"><b><h4>Upload Image </h4></b></th></tr>
+                </thead>
+                <tfoot>
+                  <tr><th colspan="2"><center><b><h4>{{ prediction_text}}</h4></b></center></th></tr>
+                </tfoot>
+                <p class="text-light">
+                  <input type=file name=file>
+                  <input type=submit value=Upload>
+               </p>
+        </div>
+      </div>
+
+      
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+         <tr><td colspan="2"><button type="submit" class="btnsub">PREDICT</button></td></tr>
+        </div>
+      </div>
+    </form>
+    <h2 class="result"></h2>
+  </div>
+  </div>
+  </table>
+  </body>
+</html>
